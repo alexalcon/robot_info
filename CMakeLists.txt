@@ -135,6 +135,7 @@ include_directories(
 add_executable(${PROJECT_NAME}_node src/robot_info_class.cpp src/robot_info_main.cpp)
 add_executable(agv_robot_info_node src/robot_info_class.cpp 
 								   src/agv_robot_info_class.cpp
+								   src/hydraulic_system_monitor.cpp
 								   src/agv_robot_info_main.cpp)
 
 ## Rename C++ executable without prefix

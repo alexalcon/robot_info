@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh;
 
     AGVRobotInfo agv_robot_info = AGVRobotInfo(&nh);
-    // RobotInfo robot_info = RobotInfo(&nh, "A", "B", "C", "D");
+    // AGVRobotInfo agv_robot_info = AGVRobotInfo(&nh, "A", "B", "C", "D", "E");
     
     ros::Rate loop_rate(1);
 

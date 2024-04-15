@@ -27,17 +27,17 @@ RobotInfo::RobotInfo(ros::NodeHandle *nh) {
 } // end user-defined default constructor
 
 // delegated parameterized constructor
-RobotInfo::RobotInfo(ros::NodeHandle *nh, const std::string &robot_description,
+RobotInfo::RobotInfo(ros::NodeHandle *nh, 
+                     const std::string &robot_description,
                      const std::string &serial_number,
                      const std::string &ip_address,
                      const std::string &firmware_version)
-    : RobotInfo::RobotInfo(
-          nh) { // this calls the user-defined default constructor
+    : RobotInfo::RobotInfo(nh) { // this calls the user-defined default constructor
 
   /**
    * At this point, the default constructor has finished.
-   * The nh, robot_info_topic and msg are already set to
-   * "robot_info" by the user-defined default constructor.
+   * The nh, robot_info_topic are already set to "robot info" 
+   * by the user-defined default constructor.
    */
 
   // user-defined robot technical specifications info
@@ -53,15 +53,13 @@ RobotInfo::RobotInfo(ros::NodeHandle *nh, const std::string &robot_description,
 } // end delegated parameterized constructor
 //-----------------------------------------------------------------------------------
 
-//###################################################################################
+// populate the message fields with data from the RobotInfo object
 void RobotInfo::populateMessage(robotinfo_msgs::RobotInfo10Fields &msg) const {
-  // populate the message fields with data from the RobotInfo object
   msg.data_field_01 = this->robot_description;
   msg.data_field_02 = this->serial_number;
   msg.data_field_03 = this->ip_address;
   msg.data_field_04 = this->firmware_version;
 }
-//###################################################################################
 
 // publisher set up
 //-----------------------------------------------------------------------------------------------
